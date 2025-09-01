@@ -1,0 +1,112 @@
+[    
+    {
+        "question_id": "question_diagrams_2",
+        "question": "Which team(s) will play all the group stage games with no traveling between venues?",
+        "img_path": "diagrams/diagrams_0002.jpg",
+        "image_type": "Artificial",
+        "image_subtype": "Diagram",
+        "reference": "Monterrey and Seattle Sounders",
+        "question_type": "open",
+        "reasoning_type": "VL",
+        "evaluator": "key_items_matching",
+        "evaluator_kwargs": {
+            "key_items": [
+                ["Monterrey"],
+                ["Seattle Sounders"]
+            ]
+        },
+        "meta_info": {
+            "source": "https://commons.wikimedia.org/wiki/File:FIFA_Club_World_Cup_Schedule.png",
+            "uploader": "Andlil",
+            "license": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        "task": "diagrams"
+    },
+    {
+        "question_id": "question_academic_42",
+        "question": "The diagram to the right shows a market where there is a binding price floor, PF. (The market is highly competitive with no market failures.) In this market, the deadweight loss is: A. area e+f. B. area a+b+c+d. C. area g+h. D. at least area e+f, but almost certainly more than that. E. at least area g+h, but almost certainly more than that. F. area i.",
+        "img_path": "academic/academic_0042.png",
+        "image_type": "Expert",
+        "image_subtype": "Science",
+        "reference": "D",
+        "question_type": "multiple-choice",
+        "category": "economics",
+        "subject": "microeconomics",
+        "reasoning_type": "VL",
+        "meta_info": {
+            "source": "https://eml.berkeley.edu/~saez/econ2/Midterm1F2023solution.pdf"
+        },
+        "evaluator": "choices_matching",
+        "evaluator_kwargs": {
+            "label": "D"
+        },
+        "task": "academic"
+    },
+    {
+        "question_id": "question_multi_1",
+        "question": "Arrange these video frames in chronological order: A: <image 1>\nB: <image 2>\nC: <image 3>\nD: <image 4>",
+        "img_path": [
+            "multi/1-A.jpg",
+            "multi/1-B.jpg",
+            "multi/1-C.jpg",
+            "multi/1-D.jpg"
+        ],
+        "image_type": "Naturual",
+        "image_subtype": "Animal",
+        "reference": "C, D, A, B",
+        "question_type": "open",
+        "task_category": "multi-images",
+        "reasoning_type": "VL",
+        "evaluator": "ordered_list_matching",
+        "evaluator_kwargs": {
+            "order": [
+                "C",
+                "D",
+                "A",
+                "B"
+            ]
+        },
+        "meta_info": {
+            "source": "self-collected"
+        },
+        "task": "multi"
+    },
+    {
+        "question_id": "question_recognition_18",
+        "question": "How many airlines can be spot on from all aeroplanes in the image?",
+        "img_path": "recognition/recognition_0118.jpg",
+        "image_type": "Urban",
+        "image_subtype": "Infrastructure",
+        "reference": "3",
+        "question_type": "open",
+        "task_category": "recognition",
+        "reasoning_type": "V",
+        "evaluator": "number_matching",
+        "evaluator_kwargs": {"value_to_match": 3},
+        "meta_info": {"source": "self-collected"},
+        "task": "recognition"
+    },
+    {
+        "question_id": "question_geo_20",
+        "question": "Guess the location.",
+        "img_path": "geo/geo_location_0031.png",
+        "image_type": "Urban",
+        "image_subtype": "Cityscapes",
+        "reference": "Tokyo Disney Resort",
+        "question_type": "open",
+        "reasoning_type": "V",
+        "meta_info": {
+            "source": "self-collected"
+        },
+        "evaluator": "location_matching",
+        "evaluator_kwargs": {
+            "location_fine_grained": [
+                "Tokyo Disney"
+            ],
+            "location_coarse_grained": [
+                "Tokyo"
+            ]
+        },
+        "task": "geo"
+    }
+]

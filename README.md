@@ -1,83 +1,79 @@
-# 📊 LRM-Eval
 ![Title](src/img/LRM-Eval.png)
 
-🏠[Home](https://github.com/flageval-baai/LRM-Eval) | 🤗[Data](https://huggingface.co/datasets/BAAI/ROME) | 🤗[Evaluation Response](https://huggingface.co/datasets/BAAI/ROME-V-evaluated) | 💻[Github Code](https://github.com/flageval-baai/ROME-evaluation) | 📄[Paper](https://arxiv.org/) | *Current Version: v1.0*
+🏠[Home](https://github.com/flageval-baai/LRM-Eval) | 🤗[Data](https://huggingface.co/datasets/BAAI/ROME) | 🤗[Evaluation Response](https://huggingface.co/datasets/BAAI/ROME-V-evaluated) | 💻[GitHub Code](https://github.com/flageval-baai/ROME-evaluation) | 📄[Paper](https://arxiv.org/) | *Current Version: v1.0*
 
-This repository contains the evaluation code of Rome from the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/).
+This repository contains the evaluation code for ROME described in the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/).
 
 ## 📰 News
-**[02/09/2024]** 🚀 First release of [Rome](https://huggingface.co/datasets/BAAI/ROME).
-We released our [leaderboard](https://github.com/flageval-baai/LRM-Eval) on **30+ LLMs and MLLMs** that we have tested so far.
-We also released all model responses across 4 rounds of evaluations ([Model response](https://huggingface.co/datasets/BAAI/ROME-evaluated)).
+**[02/09/2024]** 🚀 First release of [ROME](https://huggingface.co/datasets/BAAI/ROME).
+We released our [leaderboard](https://github.com/flageval-baai/LRM-Eval) covering **30+ LLMs and MLLMs** tested so far.
+We also released all model responses across four rounds of evaluation ([Model responses](https://huggingface.co/datasets/BAAI/ROME-evaluated)).
 
-## 📊 Data and model performance
+## 📊 Data and Model Performance
 
-### Text tasks
-Textual problems include the following subtasks:
+### Text Tasks
+Text tasks include the following subtasks:
 
 * Problem solving
-    * college course questions, word puzzles, and deciphering
-* Algorithmic Coding
-    * recent released code problems
-* Task Completion
-    * instruction following, multi-turn instruction following, long-Context Understanding
-* Factuality and Abstention
+    * college-level course questions, word puzzles, and deciphering
+* Algorithmic coding
+    * recently released coding problems
+* Task completion
+    * instruction following, multi-turn instruction following, long-context understanding
+* Factuality and abstention
     * long-tailed knowledge
 * Safety
-    * harmful generation and jailbreaking
+    * harmful content generation and jailbreaking
 
 
-Scatter plots on overall accuracy and token consumption for textual problems
-![Comparison of model performance on visual tasks](src/img/overall_error_bars.png)
+Scatter plot of overall accuracy vs. token consumption for textual problems
+![Comparison of model performance on textual tasks](src/img/LLM-overall_scatter.png)
 
-Visual tasks include 8 subtasks (281 high-quality questions in total). Each sample has been carefully checked to ensure that images are necessary to answer the questions correctly:
+Visual tasks include 8 subtasks (281 high-quality questions in total). Each sample has been verified to ensure that images are necessary to answer correctly:
 * Academic
     * questions from college courses
 * Diagrams
     * charts and figures collected from recent scientific papers, reports, or blog posts
-* Puzzles and game
-    * raven tests, Rebus puzzles and game play
+* Puzzles and games
+    * Raven's Progressive Matrices, rebus puzzles, and gameplay
 * Memes
     * recreated memes
 * Geo
-    * geolocation Inference
+    * geolocation inference
 * Recognition
     * fine-grained recognition
 * Multi-image
-    * find-the-difference or video frame reordering.
+    * find-the-difference tasks or video frame reordering.
 * Spatial
-    * elative positions, depths/distances, height, etc
+    * relative positions, depths/distances, heights, etc
 
-Scatter plots on overall accuracy and token consumption for visual problems
-![Comparison of model performance on visual tasks](src/img/overall_error_bars.png)
+Scatter plot of overall accuracy vs. token consumption for visual problems
+![Comparison of model performance on visual tasks](src/img/VLM-overall_scatter.png)
 
 ## 👋 Evaluation Findings
 We conduct a moderate-scale, contamination-free evaluation of current LRMs with some preliminary findings. 
 
-* With a few more thousands of thinking tokens, LRMs consistently show superior performance than their non-thinking counterparts in solving challenging problems or puzzles.
-* LRMs achieving high metrics on previous benchmarks are also showing within-task generalization, thus benchmark saturation should not always be attributed to contamination or memorization.
-* Many recently findings from LRMs might be model-specific or data-specific. For instance, we observe slight degradation in instruction following only on Claude Sonnet 4 and DeepSeek series, and on Qwen 3 and DeepSeek LRMs in multi-turn settings.
-* There exists degradation in multi-turn settings for some LRMs against their non-thinking counterparts, even when they are showing superior or on-par metrics on single-turn instructions following.
-* Current open-weight LRMs may tend to show more vulnerability against harmful content prompts or jailbreaking, implying necessity of careful deployment.
-* Current-generation text-based inference-time scaling has not yet brought notable gains on visual reasoning for most VLMs. %\emoji{-1} 
-* Performance varies too much for generally difficult subsets which implies huge difficulty in conducting statistically reliable evaluation at moderate cost.
-* Many top-tier LRMs may pretend to conduct tool use or web search even when they do not have real access, which leaves question on reliability. We appeal for more transparency in revealing the reasoning details to enable more awareness during usage, especially multimodal contents.
-* Signals of misaligned thinking and answers: models are optimized to be stronger but also more difficult to monitor or to interpret, with inconsistency between thinking and answers being non-trivially prevalent for many LRMs we investigated.
-* Different model developers seem to prioritize things differently: On visual questions (our ROME benchmark), Gemini 2.5 Pro tops in overall accuracy, o4-mini and GPT-5 strike a better balance in performance and token consumption, while Claude Sonnet 4 is showing the best controlled thinking behaviors.
+* We observe concerning signals of **misaligned thinking and answers**, more or less appearing on all LRMs we have investigated: the actual answer given in the model response may differ from what has been concluded in the reasoning process. It has also been prevalent that the reasoning process implies clear uncertainty but the LRM finally gives a very deterministic answer. Even many of the top-tier LRMs do not seem to know when to abstain.
+* Many top-tier LRMs may **pretend to have used an external tool or conducted a web search** during reasoning even when they do not have real access, leaving a big question mark on credibility and reliability. We appeal for more transparency in revealing more reasoning details to enable sufficient awareness during usage, especially for conversations involving multimodal reasoning.
+* Current open-weight LRMs may tend to show more vulnerability against harmful content prompts or jailbreaking, implying necessity of more careful deployment.
+* Some recent findings on LRMs (versus non-thinking counterparts) might be model-specific or data-specific. For instance, we observe degradation in (verifiable) instruction following only on Claude Sonnet 4 and DeepSeek series, but more LRMs show weaknesses in multi-turn settings.
+* Text-based inference-time scaling has not yet brought as notable gains on visual reasoning.
+* Performance varies too much for generally difficult subsets, which implies a big challenge in conducting statistically reliable evaluation at moderate cost.
+* Different model developers might have been prioritizing things differently: GPT-5 series comprehensively show superiority in textual problem solving. On visual questions (our new benchmark named ROME), Gemini 2.5 Pro marginally tops in overall accuracy, o4-mini and GPT-5 strike a better balance with token consumption, while Claude Sonnet 4 is showing relatively the best controlled thinking behaviors overall.
 
 
 ## 📐 Evaluation Script Usage
 
-We use 5 evaluators and human-curated annotations to evaluate the model's performance:
-- key_items_matching: we check if the key items occur in the model's answer
-- choices_matching: match the model's answer with the choices extracted from the question
-- ordered_list_matching: match the model's answer with the ordered list
-- number_matching: match the model's answer with the number (allowing a 10% relative error for floats and a 1e-3 absolute error for integers)
-- location_matching: match the model's answer with the location (supporting both fine-grained and coarse-grained matching)
+We use five rule-based evaluators alongside human-curated annotations to evaluate model performance:
+- key_items_matching: checks whether key items occur in the model's answer
+- choices_matching: matches the model's answer to choices extracted from the question
+- ordered_list_matching: matches the model's answer to an ordered list
+- number_matching: matches numeric answers (±10% relative for floats; ±1e-3 absolute for integers)
+- location_matching: matches locations (supports fine-grained and coarse-grained matching)
 
 ### How to Use the Evaluator Script
 
-Convert your evaluation into the specific format as listed in [Inputs and formats](#inputs-and-formats). Then execute the following command:
+Convert your data into the formats listed under [Inputs and Formats](#inputs-and-formats), then run:
 
 
 ```bash
@@ -95,8 +91,9 @@ python src/evaluate.py \
 - `--use_llm_evaluator`: Enables LLM-based semantic grading (otherwise rule-based only).
 - `--llm_model`: Specifies the model name for LLM grading. Default reads from `OPENAI_MODEL` or uses `gpt-4.1-mini`.
 - `--output`: Specifies the output path for scores. Default: `scores.json` next to the predictions file.
+ - `--updated`: Writes merged/normalized predictions. Default: `updated_predictions.json` next to the predictions file.
 
-Environment variables for LLM grading (required when `--use_llm_evaluator`):
+Environment variables for LLM grading (required when using `--use_llm_evaluator`):
 - `OPENAI_API_KEY`
 - `OPENAI_BASE_URL`
 - `OPENAI_MODEL` (optional; can also pass via `--llm_model`)
@@ -154,7 +151,7 @@ Examples:
 - number_matching: `{ "value_to_match": number }`
 - location_matching: `{ "location_fine_grained": List[str], "location_coarse_grained"?: List[str], "fine_grained_score"?: number, "coarse_grained_score"?: number }`
 
-Answers are auto-normalized and extracted internally (e.g., stripping "Final Answer:", handling LaTeX `\boxed{}`), so you only need to provide the raw model answer in `answer`.
+Answers are automatically normalized and extracted internally (e.g., stripping "Final Answer:", handling LaTeX `\boxed{}`), so you only need to provide the raw model answer in `answer`.
 
 ### Outputs
 
@@ -167,7 +164,7 @@ The scores JSON includes:
 - Per-bucket entries keyed by `tracker_type` values: `[score_sum, count, accuracy, { subtype: [score_sum, count, accuracy], ... }]`
 
 ## Citation
-If you use our work and are inspired by our work, please consider cite us (available soon):
+If you use and are inspired by our work, please consider citing us (available soon):
 ```bibtex
 @article{LRM-Eval,
   title={A Preliminary Contamination-Free Evaluation of Reasoning Models},

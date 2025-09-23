@@ -16,6 +16,9 @@ This repository contains the evaluation code for ROME described in the paper [A 
 We released our [leaderboard](https://github.com/flageval-baai/LRM-Eval) covering **30+ LLMs and MLLMs** tested so far.
 We also released all model responses across four rounds of evaluation ([Model responses](https://huggingface.co/datasets/BAAI/ROME-evaluated)).
 
+## Todo
+- [ ] Add model responses in text tasks
+
 ## 📊 Data and Model Performance
 
 ### Text Tasks
@@ -173,10 +176,12 @@ The scores JSON includes:
 ## Citation
 If you use and are inspired by our work, please consider citing us (available soon):
 ```bibtex
-@article{LRM-Eval,
-  title={A Preliminary Contamination-Free Evaluation of Reasoning Models},
-  author={BAAI FlagEval Team},
-  journal={arXiv preprint arXiv:},
-  year={2025}
+@misc{qin2025flageval,
+    title={FlagEval Findings Report: A Preliminary Evaluation of Large Reasoning Models on Automatically Verifiable Textual and Visual Questions},
+    author={Bowen Qin and Chen Yue and Fang Yin and Hui Wang and JG Yao and Jiakang Liu and Jing-Shu Zheng and Miguel Hu Chen and Richeng Xuan and Shibei Meng and Shiqi Zhou and Teng Dai and Tong-Shuai Ren and Wei Cui and Xi Yang and Xialin Du and Xiaojing Xu and Xue Sun and Xuejing Li and Yaming Liu and Yesheng Liu and Ying Liu and Yonghua Lin and Yu Zhao and Yunduo Zhang and Yuwen Luo and Zheqi He and Zhiyuan He and Zhongyuan Wang},
+    year={2025},
+    eprint={2509.17177},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
 }
 ```

@@ -1,6 +1,6 @@
 ![Title](src/img/LRM-Eval.png)
 
-🏠[Home](https://github.com/flageval-baai/LRM-Eval) | 🤗[Data](https://huggingface.co/datasets/BAAI/ROME) | 🤗[Evaluation Response](https://huggingface.co/datasets/BAAI/ROME-V-evaluated) | 💻[GitHub Code](https://github.com/flageval-baai/ROME-evaluation) | 📄[Paper](https://arxiv.org/) 
+🏠[Home](https://github.com/flageval-baai/LRM-Eval) | 🤗[Data](https://huggingface.co/datasets/BAAI/ROME) | 🤗[Evaluation Response](https://huggingface.co/datasets/BAAI/ROME-V-evaluated) | 💻[GitHub Code](https://github.com/flageval-baai/ROME-evaluation) | 📄[Paper](https://github.com/flageval-baai/ROME-evaluation/blob/master/report/Preliminary_Evaluation_Report_for_Deep_Thinking_Models_.pdf) 
 
 This repository contains the evaluation code for ROME described in the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/).
 

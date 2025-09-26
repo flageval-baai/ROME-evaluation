@@ -10,7 +10,10 @@
 This repository contains the evaluation code for ROME described in the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/pdf/2509.17177).
 
 ## 📰 News
-**[02/09/2024]** 🚀 First release of [ROME](https://huggingface.co/datasets/BAAI/ROME).
+* **[21/09/2025]** 🚀  Our new Large Reasoning Model evaluation is one of the most comprehensive ones yet! 
+We benchmarked almost all large reasoning models with different reasoning effort (GPT-5, o3, o4-mini, Gemini, Claude, DeepSeek, Qwen, Mistral, Phi, etc.) on a wide spectrum of domains: 10 text reasoning tasks and 8 visual reasoning tasks. See details in our technical report [here](https://arxiv.org/pdf/2509.17177).
+
+* **[21/09/2024]** 🚀 First release of [ROME](https://huggingface.co/datasets/BAAI/ROME).
 We released our [leaderboard](https://github.com/flageval-baai/LRM-Eval) covering **30+ LLMs and MLLMs** tested so far.
 We also released all model responses across four rounds of evaluation ([Model responses](https://huggingface.co/datasets/BAAI/ROME-evaluated)).
 

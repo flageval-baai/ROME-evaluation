@@ -1,7 +1,5 @@
 ![Title](src/img/LRM-Eval.png)
 
-# ROME: Reasoning-Oriented Model Evaluation
-
 [![arXiv](https://img.shields.io/badge/Paper-arXiv-red.svg)](https://arxiv.org/pdf/2509.17177)
 [![Arxiv](https://img.shields.io/badge/Arxiv-arXiv-red.svg)](https://arxiv.org/abs/2509.17177)
 [![Hugging Face-Dataset](https://img.shields.io/badge/Hugging%20Face-ROME-blue)](https://huggingface.co/datasets/BAAI/ROME)

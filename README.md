@@ -10,6 +10,8 @@
 This repository contains the evaluation code for ROME described in the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/pdf/2509.17177).
 
 ## 📰 News
+* **[28/09/2025]** 🚀  Updated the leaderboard with the latest released [Qwen3-VL-235B-A22B-Thinking](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking) and [Qwen3-VL-235B-A22B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct).
+
 * **[21/09/2025]** 🚀  Our new Large Reasoning Model evaluation is one of the most comprehensive ones yet! 
 We benchmarked almost all large reasoning models with different reasoning effort (GPT-5, o3, o4-mini, Gemini, Claude, DeepSeek, Qwen, Mistral, Phi, etc.) on a wide spectrum of domains: 10 text reasoning tasks and 8 visual reasoning tasks. See details in our technical report [here](https://arxiv.org/pdf/2509.17177).
 

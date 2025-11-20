@@ -10,6 +10,7 @@
 This repository contains the evaluation code for ROME described in the paper [A Preliminary Contamination-Free Evaluation of Reasoning Models](https://arxiv.org/pdf/2509.17177).
 
 ## 📰 News
+* **[20/11/2025]** 🚀  Updated the leaderboard with the latest released [Gemini-3-Pro-Preview](https://deepmind.google/models/gemini/). It shows the strongest performance in visual reasoning tasks.
 * **[14/10/2025]** 🚀  Released the [LLM-assisted reasoning analyser](https://github.com/flageval-baai/LLM-assisted-analyser) for better understanding reasoning process of LRMs.
 * **[28/09/2025]** 🚀  Updated the leaderboard with the latest released [Qwen3-VL-235B-A22B-Thinking](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking) and [Qwen3-VL-235B-A22B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct).
 
